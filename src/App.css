@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+*
+{
+  margin: 0;
+  padding: 0;
+  color: rgb(240, 240, 240);
+  font-family: "Inter", sans-serif;
+  --core-blue: rgb(0, 95, 136);
+  --primary: rgb(240, 240, 240);
+  --secondary: rgb(0, 0, 0);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App
+{
+  background-color: var(--primary);
   min-height: 100vh;
+}
+
+header
+{
+  display: grid;
+  columns: 1fr;
+  width: 100%;
+  background-color: var(--core-blue);
+}
+
+.column-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header h1
+{
+  padding: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search
+{
+  width: 400px;
+  border: 1px solid var(--primary);
+  border-radius: 0.2rem;
+  color:var(--primary);
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: var(--core-blue);
+}
+
+main
+{
+  display: grid;
+  columns: 1fr;
+}
+
+.tile
+{
+  margin: 2rem;
+  background-color: var(--core-blue);
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 1rem;
+}
+
+.tile h3
+{
+  font-size: 2rem;
+ padding: 2rem 2rem 5rem 2rem;
+}
+
+.tile ul
+{
+  list-style: none;
+}
+
+.tile p
+{
+  padding: 2rem;
+  width: 70%;
+}
+
+.tile li
+{
+  padding: 0.5rem;
+}
+
+.tile a:hover
+{
+  color: rgb(147, 206, 255);
 }
