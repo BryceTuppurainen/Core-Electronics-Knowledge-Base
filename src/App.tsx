@@ -7,7 +7,7 @@ const App = () => {
   const [search, setSearch] = React.useState("");
   const [searchResults, setSearchResults] = React.useState(<></>);
 
-  const updateSearchResults = () => {
+  useEffect(() => {
     let tiles: JSX.Element[] = [];
 
     // ! TODO: Make this an actual search and have the Tiles be dynamically generated from a JSON...
@@ -38,10 +38,6 @@ const App = () => {
       );
     }
     setSearchResults(<>{tiles}</>);
-  };
-
-  useEffect(() => {
-    updateSearchResults();
   }, [search]);
 
   return (
