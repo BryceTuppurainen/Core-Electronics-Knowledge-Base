@@ -25,7 +25,11 @@ const App = () => {
           <ul>
             <li>Resources</li>
             <li>
-              <a href="https://en.wikipedia.org/wiki/I%C2%B2C" target="_blank">
+              <a
+                href="https://en.wikipedia.org/wiki/I%C2%B2C"
+                target="_blank"
+                rel="noreferrer"
+              >
                 I2C Wikipedia
               </a>
             </li>
