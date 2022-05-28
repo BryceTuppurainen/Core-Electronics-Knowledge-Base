@@ -1,0 +1,7 @@
+{
+  "result": [
+    { "title": "I2C", "description": "" },
+    { "title": "SPI", "description": "" },
+    { "title": "UART", "description": "" }
+  ]
+}

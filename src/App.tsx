@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
+import resultContent from "./resultContent.json";
+
 import Tile from "./Tile";
 
 const App = () => {
@@ -9,33 +11,26 @@ const App = () => {
 
   useEffect(() => {
     let tiles: JSX.Element[] = [];
-
-    // ! TODO: Make this an actual search and have the Tiles be dynamically generated from a JSON...
-
-    for (let iter = 0; iter < search.length; iter++) {
-      tiles.push(
-        <Tile
-          title="I2C"
-          resultId="0"
-          tags="Parralel, Communication, Protocol, I2C"
-        >
-          <p>
-            I2C or Inter-Integrated Circuit is a parallel communication protocol
-          </p>
-          <ul>
-            <li>Resources</li>
-            <li>
-              <a
-                href="https://en.wikipedia.org/wiki/I%C2%B2C"
-                target="_blank"
-                rel="noreferrer"
-              >
-                I2C Wikipedia
-              </a>
-            </li>
-          </ul>
-        </Tile>
-      );
+    if (search.length == 0) {
+      resultContent.result.forEach((result) => {
+        tiles.push(
+          <Tile title={result.title} resultId="" tags="">
+            This is a string...
+          </Tile>
+        );
+      });
+    } else {
+      resultContent.result
+        .filter((result) =>
+          result.title.toLowerCase().includes(search.toLowerCase())
+        )
+        .forEach((result) => {
+          tiles.push(
+            <Tile title={result.title} resultId="" tags="">
+              This is a string...
+            </Tile>
+          );
+        });
     }
     setSearchResults(<>{tiles}</>);
   }, [search]);
